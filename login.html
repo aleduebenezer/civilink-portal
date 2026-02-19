@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - KEEP-ID</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            100: 'rgba(136, 249, 193, 0.1)',
+                            200: 'rgba(136, 249, 193, 0.2)',
+                            300: 'rgba(136, 249, 193, 0.3)',
+                            400: 'rgba(136, 249, 193, 0.4)',
+                            500: '#88F9C1',
+                        },
+                        secondary: {
+                            100: 'rgba(249, 211, 191, 0.1)',
+                            200: 'rgba(249, 211, 191, 0.2)',
+                            300: 'rgba(249, 211, 191, 0.3)',
+                            400: 'rgba(249, 211, 191, 0.4)',
+                            500: '#F9D3BF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <div>
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-2">KEEP<span class="text-primary-500">-ID</span></h1>
+                    <h2 class="mt-6 text-3xl font-bold text-gray-900">
+                        Sign in to your account
+                    </h2>
+                    <p class="mt-2 text-sm text-gray-600">
+                        Or
+                        <a href="signup.html" class="font-medium text-primary-500 hover:text-primary-400">
+                            create a new account
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <form class="mt-8 space-y-6" id="login-form">
+                <div id="alert-container"></div>
+                <div class="rounded-md shadow-sm space-y-4">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email address</label>
+                        <input id="email" name="email" type="email" required 
+                            class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
+                            placeholder="Enter your email">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <input id="password" name="password" type="password" required
+                            class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
+                            placeholder="Enter your password">
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox"
+                            class="h-4 w-4 text-primary-500 focus:ring-primary-500 border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-primary-500 hover:text-primary-400">
+                            Forgot your password?
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit"
+                        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-gray-900 bg-primary-500 hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        Sign in
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <a href="index.html" class="text-sm text-gray-600 hover:text-primary-500">
+                        Back to Home
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

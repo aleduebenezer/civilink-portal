@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - KEEP-ID</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            100: 'rgba(136, 249, 193, 0.1)',
+                            200: 'rgba(136, 249, 193, 0.2)',
+                            300: 'rgba(136, 249, 193, 0.3)',
+                            400: 'rgba(136, 249, 193, 0.4)',
+                            500: '#88F9C1',
+                        },
+                        secondary: {
+                            100: 'rgba(249, 211, 191, 0.1)',
+                            200: 'rgba(249, 211, 191, 0.2)',
+                            300: 'rgba(249, 211, 191, 0.3)',
+                            400: 'rgba(249, 211, 191, 0.4)',
+                            500: '#F9D3BF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <button id="sidebar-toggle" class="mr-4 text-gray-700 lg:hidden">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-2xl font-bold text-gray-900">KEEP<span class="text-primary-500">-ID</span></h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-sm font-medium text-gray-900" id="user-name">User</p>
+                        <p class="text-xs text-gray-500" id="user-email">user@email.com</p>
+                    </div>
+                    <button id="logout-btn" class="text-gray-700 hover:text-red-500 transition">
+                        <i class="fas fa-sign-out-alt text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar bg-gray-800 text-white">
+        <div class="p-6 space-y-2">
+            <a href="dashboard.html" class="flex items-center space-x-3 px-4 py-3 rounded-md bg-primary-500 text-gray-900">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="my-ids.html" class="flex items-center space-x-3 px-4 py-3 rounded-md hover:bg-gray-700 transition">
+                <i class="fas fa-id-card"></i>
+                <span>My IDs</span>
+            </a>
+            <a href="track-application.html" class="flex items-center space-x-3 px-4 py-3 rounded-md hover:bg-gray-700 transition">
+                <i class="fas fa-search"></i>
+                <span>Track Application</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-md hover:bg-gray-700 transition">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-md hover:bg-gray-700 transition">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Welcome Section -->
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Welcome back, <span id="dashboard-user-name">User</span>!</h2>
+                <p class="text-gray-600">Here's an overview of your government IDs and applications</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Total IDs</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">4</p>
+                        </div>
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-id-card text-primary-500 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Active Applications</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">2</p>
+                        </div>
+                        <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-clock text-secondary-500 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Completed</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">2</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Notifications</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">3</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-bell text-blue-500 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Applications -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Recent Applications</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b">
+                                <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">ID Type</th>
+                                <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Application ID</th>
+                                <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Status</th>
+                                <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Last Updated</th>
+                                <th class="text-left py-3 px-4 text-sm font-semibold text-gray-700">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applications-table">
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-id-card text-primary-500 mr-3"></i>
+                                        <span class="font-medium">NIN</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">NIN-2026-001234</td>
+                                <td class="py-4 px-4">
+                                    <span class="status-badge status-processing">Processing</span>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">Feb 18, 2026</td>
+                                <td class="py-4 px-4">
+                                    <button class="text-primary-500 hover:text-primary-400 font-medium">View</button>
+                                </td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-passport text-secondary-500 mr-3"></i>
+                                        <span class="font-medium">International Passport</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">PSP-2026-005678</td>
+                                <td class="py-4 px-4">
+                                    <span class="status-badge status-ready">Ready for Collection</span>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">Feb 15, 2026</td>
+                                <td class="py-4 px-4">
+                                    <button class="text-primary-500 hover:text-primary-400 font-medium">View</button>
+                                </td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-vote-yea text-primary-500 mr-3"></i>
+                                        <span class="font-medium">Voter's Card</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">PVC-2026-009012</td>
+                                <td class="py-4 px-4">
+                                    <span class="status-badge status-approved">Approved</span>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">Feb 10, 2026</td>
+                                <td class="py-4 px-4">
+                                    <button class="text-primary-500 hover:text-primary-400 font-medium">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gradient-to-br from-primary-500 to-primary-400 rounded-lg shadow-md p-6 text-gray-900">
+                    <h3 class="text-2xl font-bold mb-2">Track New Application</h3>
+                    <p class="mb-4">Add a new government ID application to track</p>
+                    <a href="track-application.html" class="inline-block bg-white text-gray-900 px-6 py-2 rounded-md font-semibold hover:bg-gray-100 transition">
+                        Get Started
+                    </a>
+                </div>
+                <div class="bg-gradient-to-br from-secondary-500 to-secondary-400 rounded-lg shadow-md p-6 text-gray-900">
+                    <h3 class="text-2xl font-bold mb-2">View All IDs</h3>
+                    <p class="mb-4">Manage all your registered government IDs</p>
+                    <a href="my-ids.html" class="inline-block bg-white text-gray-900 px-6 py-2 rounded-md font-semibold hover:bg-gray-100 transition">
+                        View IDs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

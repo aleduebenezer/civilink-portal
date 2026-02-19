@@ -1,0 +1,21 @@
+{
+  "name": "keep-id-platform",
+  "version": "1.0.0",
+  "description": "Unified Digital Government Identity and Registration Tracking Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "government",
+    "identity",
+    "tracking",
+    "nigeria",
+    "nin",
+    "passport",
+    "voters-card"
+  ],
+  "author": "KEEP-ID Team",
+  "license": "MIT"
+}

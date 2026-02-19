@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My IDs - KEEP-ID</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            100: 'rgba(136, 249, 193, 0.1)',
+                            200: 'rgba(136, 249, 193, 0.2)',
+                            300: 'rgba(136, 249, 193, 0.3)',
+                            400: 'rgba(136, 249, 193, 0.4)',
+                            500: '#88F9C1',
+                        },
+                        secondary: {
+                            100: 'rgba(249, 211, 191, 0.1)',
+                            200: 'rgba(249, 211, 191, 0.2)',
+                            300: 'rgba(249, 211, 191, 0.3)',
+                            400: 'rgba(249, 211, 191, 0.4)',
+                            500: '#F9D3BF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <button id="sidebar-toggle" class="mr-4 text-gray-700 lg:hidden">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-2xl font-bold text-gray-900">KEEP<span class="text-primary-500">-ID</span></h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-sm font-medium text-gray-900" id="user-name">User</p>
+                        <p class="text-xs text-gray-500" id="user-email">user@email.com</p>
+                    </div>
+                    <button id="logout-btn" class="text-gray-700 hover:text-red-500 transition">
+                        <i class="fas fa-sign-out-alt text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar bg-gray-800 text-white">
+        <div class="p-6 space-y-2">
+            <a href="dashboard.html" class="flex items-center space-x-3 px-4 py-3 rounded-md hover:bg-gray-700 transition">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="my-ids.html" class="flex items-center space-x-3 px-4 py-3 rounded-md bg-primary-500 text-gray-900">
+                <i class="fas fa-id-card"></i>
+                <span>My IDs</span>
+            </a>
+            <a href="track-application.html" class="flex items-center space-x-3 px-4 py-3 rounded-md hover:bg-gray-700 transition">
+                <i class="fas fa-search"></i>
+                <span>Track Application</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-md hover:bg-gray-700 transition">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-md hover:bg-gray-700 transition">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">My Government IDs</h2>
+                <p class="text-gray-600">View and manage all your registered government IDs</p>
+            </div>
+
+            <!-- ID Cards Grid -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- NIN Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                    <div class="bg-gradient-to-r from-primary-500 to-primary-400 p-6">
+                        <div class="flex items-center justify-between text-gray-900">
+                            <div>
+                                <h3 class="text-2xl font-bold">National Identity Number</h3>
+                                <p class="text-sm opacity-90">NIN</p>
+                            </div>
+                            <i class="fas fa-id-card text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm text-gray-500">NIN Number</p>
+                                <p class="text-lg font-semibold text-gray-900">12345678901</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Full Name</p>
+                                <p class="text-lg font-semibold text-gray-900">John Doe</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Status</p>
+                                <span class="status-badge status-approved">Active</span>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Date Issued</p>
+                                <p class="text-gray-700">January 15, 2025</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex space-x-3">
+                            <button class="flex-1 bg-primary-500 text-gray-900 py-2 rounded-md font-semibold hover:bg-primary-400 transition">
+                                View Details
+                            </button>
+                            <button class="px-4 border border-gray-300 rounded-md hover:bg-gray-50 transition">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voter's Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                    <div class="bg-gradient-to-r from-secondary-500 to-secondary-400 p-6">
+                        <div class="flex items-center justify-between text-gray-900">
+                            <div>
+                                <h3 class="text-2xl font-bold">Voter's Card</h3>
+                                <p class="text-sm opacity-90">PVC</p>
+                            </div>
+                            <i class="fas fa-vote-yea text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm text-gray-500">VIN Number</p>
+                                <p class="text-lg font-semibold text-gray-900">90123456789012345678</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Full Name</p>
+                                <p class="text-lg font-semibold text-gray-900">John Doe</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Status</p>
+                                <span class="status-badge status-approved">Active</span>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Polling Unit</p>
+                                <p class="text-gray-700">Ward 5, Abuja</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex space-x-3">
+                            <button class="flex-1 bg-secondary-500 text-gray-900 py-2 rounded-md font-semibold hover:bg-secondary-400 transition">
+                                View Details
+                            </button>
+                            <button class="px-4 border border-gray-300 rounded-md hover:bg-gray-50 transition">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- International Passport -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-400 p-6">
+                        <div class="flex items-center justify-between text-white">
+                            <div>
+                                <h3 class="text-2xl font-bold">International Passport</h3>
+                                <p class="text-sm opacity-90">Passport</p>
+                            </div>
+                            <i class="fas fa-passport text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm text-gray-500">Passport Number</p>
+                                <p class="text-lg font-semibold text-gray-900">A12345678</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Full Name</p>
+                                <p class="text-lg font-semibold text-gray-900">John Doe</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Status</p>
+                                <span class="status-badge status-ready">Ready for Collection</span>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Expiry Date</p>
+                                <p class="text-gray-700">February 20, 2031</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex space-x-3">
+                            <button class="flex-1 bg-blue-500 text-white py-2 rounded-md font-semibold hover:bg-blue-400 transition">
+                                View Details
+                            </button>
+                            <button class="px-4 border border-gray-300 rounded-md hover:bg-gray-50 transition">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Driver's License -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                    <div class="bg-gradient-to-r from-orange-500 to-orange-400 p-6">
+                        <div class="flex items-center justify-between text-white">
+                            <div>
+                                <h3 class="text-2xl font-bold">Driver's License</h3>
+                                <p class="text-sm opacity-90">DL</p>
+                            </div>
+                            <i class="fas fa-car text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm text-gray-500">License Number</p>
+                                <p class="text-lg font-semibold text-gray-900">FKJ-123456789-AA</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Full Name</p>
+                                <p class="text-lg font-semibold text-gray-900">John Doe</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Status</p>
+                                <span class="status-badge status-processing">Processing</span>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">License Class</p>
+                                <p class="text-gray-700">Class C (Private Vehicle)</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex space-x-3">
+                            <button class="flex-1 bg-orange-500 text-white py-2 rounded-md font-semibold hover:bg-orange-400 transition">
+                                View Details
+                            </button>
+                            <button class="px-4 border border-gray-300 rounded-md hover:bg-gray-50 transition">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add New ID Button -->
+            <div class="mt-8 text-center">
+                <a href="track-application.html" class="inline-block bg-primary-500 text-gray-900 px-8 py-3 rounded-md font-semibold hover:bg-primary-400 transition">
+                    <i class="fas fa-plus mr-2"></i>
+                    Track New Application
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
